@@ -5,6 +5,7 @@
   align-items: center;
   min-height: 100vh;
   background-color: #f9f8f7;
+  overflow: hidden;
 }
 
 .center {
@@ -96,6 +97,29 @@
   padding: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+/* Hide scrollbar */
+.portfolioContainer::-webkit-scrollbar {
+  width: 0; /* Adjust the width as needed */
+  height: 0; /* Adjust the height as needed */
+}
+.portfolioContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+.portfolioContainer::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+/**/
+.portfolioContainer::-webkit-scrollbar {
+  width: 0; /* Adjust the width as needed */
+  height: 0; /* Adjust the height as needed */
+}
+.portfolioContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+.portfolioContainer::-webkit-scrollbar-thumb {
+  background: transparent;
 }
 
 .webLogo {
