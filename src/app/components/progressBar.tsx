@@ -29,18 +29,18 @@ const Direction = {
 };
 
 type Props = {
-    maxValue?: number,
-    selectedValue?: number,
-    radius?: number,
-    strokeWidth?: number,
-    label?: string,
-    activeStrokeColor?: string,
+    maxValue: number,
+    selectedValue: number,
+    radius: number,
+    strokeWidth: number,
+    label: string,
+    activeStrokeColor: string,
     inactiveStrokeColor?: string,
-    labelFontSize?: number,
-    valueFontSize?: number,
+    labelFontSize: number,
+    valueFontSize: number,
     withGradient?: boolean,
     anticlockwise?: boolean,
-    initialAngularDisplacement?: number,
+    initialAngularDisplacement: number,
     backgroundColor?: string,
     textColor?: string,
 };
@@ -62,7 +62,7 @@ const CircularProgressBar = ({
     initialAngularDisplacement,
 }:Props) => {
 // ----  PIE calculation funciton --------
-    const generatePie = (value) => {
+    const generatePie = (value : number) => {
         const x = radius - Math.cos((2 * Math.PI) / (100 / value)) * radius;
         const y = radius + Math.sin((2 * Math.PI) / (100 / value)) * radius;
         const long = value <= 50 ? 0 : 1;
@@ -72,14 +72,14 @@ const CircularProgressBar = ({
     };
 
     // ----  PIE Area calculation  --------
-    const calculatePieValue = (numberOfBars) => {
+    const calculatePieValue = (numberOfBars : number) => {
         const angle = 360 / numberOfBars;
         const pieValue = Math.floor(angle / 4);
         return pieValue < 1 ? 1 : Math.floor(angle / 4);
     };
 
     // ----  PIE render funciton --------
-    const renderPie = (i) => {
+    const renderPie = (i : number) => {
         const DIRECTION = anticlockwise ? Direction.ANTI_CLOCKWISE : Direction.CLOCKSWISE;
         // Rotation Calculation
         const primaryRotationAngle = (maxValue - 1) * (360 / maxValue);
@@ -185,7 +185,7 @@ CircularProgressBar.defaultProps = {
     backgroundColor: '#fff',
     textColor: '#000',
     labelFontSize: Math.floor(DEFAULT_RADIUS / 3),
-    valueFontSize: Math.floor(DEFAULT_RADIUS / 2.5),
+    valueFontSize: Math.floor(DEFAULT_RADIUS / 2.13),
     withGradient: false,
     anticlockwise: false,
     initialAngularDisplacement: 0,

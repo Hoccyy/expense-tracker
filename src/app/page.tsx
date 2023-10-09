@@ -12,14 +12,14 @@ import CSVReader from "./components/CSVReader";
 let NetPortfolioValue: number = 0;
 let monthlyDividends: number = 0;
 var MonthlyIncome: number = 1200;
-export let MonthlyCashFlowValue: number = 0;
-export let MonthlyExpenditure: number = 0;
-export let CashFlowGoal: number = 0;
+let MonthlyCashFlowValue: number = 0;
+let MonthlyExpenditure: number = 0;
+let CashFlowGoal: number = 0;
 
 // Extract method for stock deletion and addition Extraction #1
 const portfolioStockItems: React.JSX.Element[] = []; //Insert the data here
 
-export function loadPortfolioFromCsv(csvFile : any){
+function loadPortfolioFromCsv(csvFile : any){
   // Retrieve portfolio from CSV file
   let portfolioCSV = CSVReader(csvFile)
     //Update each thing here
@@ -72,7 +72,7 @@ export default function Home() {
           <div className={styles.progressTrackerContainer}>
             <div className={styles.verticalCenter}>
               <CircularProgressBar
-                selectedValue={(MonthlyCashFlowValue/CashFlowGoal)*100}
+                selectedValue={ (MonthlyCashFlowValue / CashFlowGoal) * 100 }
                 maxValue={100}
                 radius={100}
                 activeStrokeColor="#0f4fff"
